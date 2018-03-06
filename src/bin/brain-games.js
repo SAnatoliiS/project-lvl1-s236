@@ -1,3 +1,4 @@
 #!/usr/bin/env node
-import name from '..';
+import { hello } from '..';
 
+hello();

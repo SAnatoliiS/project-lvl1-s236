@@ -4,5 +4,7 @@ start:
 	npm run babel-node -- src/bin/brain-games.js
 publish:
 	npm publish
-install:
-	sudo npm install -g anatolii-brain-games
+load:
+	npm install anatolii-brain-games
+lint:
+	npm run eslint src/*.js src/bin/*.js
