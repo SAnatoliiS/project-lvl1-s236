@@ -1,6 +1,6 @@
 {
   "name": "anatolii-brain-games",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "",
   "main": "dist/brain-games.js",
   "scripts": {
@@ -11,8 +11,8 @@
 	  "eslint": "eslint"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-games": "./dist/bin/brain-games.js",
+    "brain-even": "./dist/bin/brain-even.js"
   },
   "files": [
     "dist"

@@ -32,7 +32,7 @@ export const even = () => {
       console.log('Correct!\n');
       i += 1;
     } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${isEven(r)}.`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${isEven(r)}'.`);
       console.log(`Let's try again, ${nam}!\n`);
       i = 0;
     }
