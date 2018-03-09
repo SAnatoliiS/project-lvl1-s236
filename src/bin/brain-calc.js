@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { hello } from '..';
-import even from '../even';
+import calc from '../calc';
 
 hello();
-even();
+calc();
+
