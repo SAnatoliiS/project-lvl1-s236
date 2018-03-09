@@ -9,7 +9,7 @@ export default () => {
   };
 
   const f = () => {
-    const x = rand();
+    const x = rand(100);
     return str => (str === 'ask' ? x : isEven(x));
   };
 

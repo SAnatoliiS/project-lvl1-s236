@@ -17,8 +17,8 @@ export default () => {
   };
 
   const f = () => {
-    const x = rand();
-    const y = rand();
+    const x = rand(10);
+    const y = rand(10);
     const sign = randSign();
     return str => (str === 'ask' ? `${x} ${sign} ${y}` : right(x, sign, y));
   };

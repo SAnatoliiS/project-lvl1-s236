@@ -10,8 +10,8 @@ export const hello = () => {
   console.log('Welcome to the Brain Games!');
 };
 
-export const rand = () => {
-  const r = Math.random() * 10;
+export const rand = (num) => {
+  const r = Math.random() * num;
   return r - (r % 1);
 };
 
