@@ -1,27 +1,28 @@
+import { cons } from 'hexlet-pairs';
 import { randSign, rand, flow } from './index';
 
 export default () => {
   const quest = 'What is the result of the expression?';
 
-  const right = (x, sign, y) => {
+  const answer = (num1, sign, num2) => {
     switch (sign) {
       case '+':
-        return String(x + y);
+        return num1 + num2;
       case '-':
-        return String(x - y);
+        return num1 - num2;
       case '*':
-        return String(x * y);
+        return num1 * num2;
       default:
         return 0;
     }
   };
 
-  const f = () => {
-    const x = rand(10);
-    const y = rand(10);
+  const gen = () => {
+    const num1 = rand(10);
+    const num2 = rand(10);
     const sign = randSign();
-    return str => (str === 'ask' ? `${x} ${sign} ${y}` : right(x, sign, y));
+    return cons(`${num1} ${sign} ${num2}`, answer(num1, sign, num2));
   };
 
-  flow(quest, f);
+  flow(quest, gen);
 };

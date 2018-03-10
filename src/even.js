@@ -1,17 +1,18 @@
+import { cons } from 'hexlet-pairs';
 import { rand, flow } from './index';
 
 export default () => {
-  const quest = 'What is the result of the expression?';
+  const quest = 'Answer "yes" if number even otherwise answer "no".';
 
-  const isEven = (x) => {
-    if (x % 2 === 0) return 'yes';
+  const answer = (num) => {
+    if (num % 2 === 0) return 'yes';
     return 'no';
   };
 
-  const f = () => {
-    const x = rand(100);
-    return str => (str === 'ask' ? x : isEven(x));
+  const gen = () => {
+    const num = rand(100);
+    return cons(num, answer(num));
   };
 
-  flow(quest, f);
+  flow(quest, gen);
 };

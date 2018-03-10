@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { car as ask, cdr as ans } from 'hexlet-pairs';
 
 export const name = () => {
   const actual = readlineSync.question('\nMay I have your name? ');
@@ -22,19 +23,19 @@ export const randSign = () => {
   return '*';
 };
 
-export const flow = (quest, f) => {
+export const flow = (quest, gen) => {
   console.log(quest);
   const nam = name();
   let i = 0;
   while (i < 3) {
-    const value = f();
-    console.log(`Question: ${value('ask')}`);
+    const pair = gen();
+    console.log(`Question: ${ask(pair)}`);
     const answer = readlineSync.question('Your answer: ');
-    if (value('ans') === answer) {
+    if (String(ans(pair)) === answer) {
       console.log('Correct!\n');
       i += 1;
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${value('ans')}'.`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${ans(pair)}'.`);
       console.log(`Let's try again, ${nam}!\n`);
       i = 0;
     }

@@ -1,21 +1,22 @@
+import { cons } from 'hexlet-pairs';
 import { rand, flow } from './index';
 
 export default () => {
   const quest = 'Find the greatest common divisor of given numbers.';
 
-  const right = (x, y) => {
-    let d;
-    for (let i = 1; i <= x; i += 1) {
-      if (x % i === 0 && y % i === 0) d = i;
+  const answer = (num1, num2) => {
+    let res;
+    for (let i = 1; i <= num1; i += 1) {
+      if (num1 % i === 0 && num2 % i === 0) res = i;
     }
-    return String(d);
+    return String(res);
   };
 
-  const f = () => {
-    const x = rand(100);
-    const y = rand(100);
-    return str => (str === 'ask' ? `${x} ${y}` : right(x, y));
+  const gen = () => {
+    const num1 = rand(100);
+    const num2 = rand(100);
+    return cons(`${num1} ${num2}`, answer(num1, num2));
   };
 
-  flow(quest, f);
+  flow(quest, gen);
 };
