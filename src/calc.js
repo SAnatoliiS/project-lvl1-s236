@@ -1,10 +1,11 @@
 import { cons } from 'hexlet-pairs';
-import { randSign, rand, flow } from './index';
+import { randSign, rand, flow, hello } from './index';
 
 export default () => {
-  const quest = 'What is the result of the expression?';
+  hello();
+  const question = 'What is the result of the expression?';
 
-  const answer = (num1, sign, num2) => {
+  const getAnswer = (num1, sign, num2) => {
     switch (sign) {
       case '+':
         return num1 + num2;
@@ -17,12 +18,12 @@ export default () => {
     }
   };
 
-  const gen = () => {
+  const generateNums = () => {
     const num1 = rand(10);
     const num2 = rand(10);
     const sign = randSign();
-    return cons(`${num1} ${sign} ${num2}`, answer(num1, sign, num2));
+    return cons(`${num1} ${sign} ${num2}`, getAnswer(num1, sign, num2));
   };
 
-  flow(quest, gen);
+  flow(question, generateNums);
 };

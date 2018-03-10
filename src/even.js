@@ -1,18 +1,19 @@
 import { cons } from 'hexlet-pairs';
-import { rand, flow } from './index';
+import { rand, flow, hello } from './index';
 
 export default () => {
-  const quest = 'Answer "yes" if number even otherwise answer "no".';
+  hello();
+  const question = 'Answer "yes" if number even otherwise answer "no".';
 
-  const answer = (num) => {
+  const getAnswer = (num) => {
     if (num % 2 === 0) return 'yes';
     return 'no';
   };
 
-  const gen = () => {
+  const generateNums = () => {
     const num = rand(100);
-    return cons(num, answer(num));
+    return cons(num, getAnswer(num));
   };
 
-  flow(quest, gen);
+  flow(question, generateNums);
 };
