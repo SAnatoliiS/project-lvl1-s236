@@ -1,20 +1,20 @@
 import { cons } from 'hexlet-pairs';
-import { rand, flow, hello } from './index';
+import { rand, flow, hello, getAnswer } from './index';
 
 export default () => {
   hello();
   const question = 'Is this number prime?';
 
-  const getAnswer = (num) => {
+  const isPrime = (num) => {
     for (let i = 2; i < num; i += 1) {
-      if (num % i === 0) return 'no';
+      if (num % i === 0) return false;
     }
-    return 'yes';
+    return true;
   };
 
   const generateNums = () => {
     const num = rand(100);
-    return cons(num, getAnswer(num));
+    return cons(num, getAnswer(isPrime(num)));
   };
 
   flow(question, generateNums);

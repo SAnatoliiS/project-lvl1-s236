@@ -23,6 +23,8 @@ export const randSign = () => {
   return '*';
 };
 
+export const getAnswer = bool => (bool ? 'yes' : 'no');
+
 export const flow = (quest, gen) => {
   console.log(quest);
   const nam = name();
